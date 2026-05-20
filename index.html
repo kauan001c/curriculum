@@ -2,901 +2,744 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Kauan da Silva de Araujo | Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Francisco Kauan | Accounting & Tax Professional</title>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: modern system-like with elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --bg: #4d83b8;
-            --bg-deep: #2e5f92;
-            --bg-soft: #6e9ecd;
-            --surface: rgba(255, 255, 255, 0.14);
-            --surface-strong: rgba(255, 255, 255, 0.22);
-            --surface-solid: rgba(245, 250, 255, 0.92);
-            --line: rgba(255, 255, 255, 0.18);
-            --text: #eef7ff;
-            --text-dark: #14324f;
-            --muted: rgba(232, 242, 250, 0.82);
-            --muted-dark: #54708b;
-            --accent: #9fe0ff;
-            --accent-strong: #dff6ff;
-            --shadow: 0 24px 70px rgba(10, 29, 49, 0.2);
-        }
-
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            /* refined cool palette - deep navy, fresh blue, frosted surfaces */
+            --bg-primary: #f0f4fa;
+            --bg-surface: #ffffff;
+            --bg-elevated: #ffffff;
+            --accent-deep: #0a2b44;
+            --accent-mid: #1e4a76;
+            --accent-light: #2f6c9f;
+            --accent-soft: #ebf3fc;
+            --accent-glow: #cbe4fe;
+            --text-primary: #13293d;
+            --text-secondary: #2c4b6e;
+            --text-muted: #5c7a99;
+            --border-light: #e2edf7;
+            --shadow-sm: 0 6px 14px rgba(0, 10, 30, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 12px 28px -8px rgba(0, 32, 64, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 22px 40px -12px rgba(0, 35, 65, 0.12);
+            --transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
         }
 
         body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 22%),
-                radial-gradient(circle at 85% 12%, rgba(221, 242, 255, 0.16), transparent 20%),
-                linear-gradient(180deg, #5c90c4 0%, var(--bg) 26%, var(--bg-deep) 100%);
-            overflow-x: hidden;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.45;
+            scroll-behavior: smooth;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        /* enhanced smooth container */
+        .resume-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 24px 56px;
         }
 
-        img {
-            display: block;
-            max-width: 100%;
+        /* glassmorphism / modern card layers */
+        .card {
+            background: var(--bg-surface);
+            border-radius: 32px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(0px);
         }
 
-        button {
-            font: inherit;
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
         }
 
-        .page {
-            width: 100%;
-            padding-bottom: 48px;
-        }
-
-        .shell {
-            width: 100%;
-            padding-inline: clamp(18px, 4vw, 56px);
-        }
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            min-height: 420px;
+        /* header hero section — bold, minimal, structured */
+        .hero-section {
             display: grid;
-            align-items: end;
-            padding-top: 24px;
-            background:
-                linear-gradient(140deg, rgba(14, 52, 88, 0.92), rgba(66, 123, 177, 0.8)),
-                linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            grid-template-columns: 0.9fr 2.2fr;
+            gap: 32px;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fcff 100%);
+            border-radius: 40px;
+            padding: 32px 36px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(30, 74, 118, 0.08);
         }
 
-        .hero::before,
-        .hero::after {
-            content: "";
-            position: absolute;
-            pointer-events: none;
+        .avatar-frame {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero::before {
-            inset: 0;
-            background:
-                radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.16), transparent 0 18%),
-                radial-gradient(circle at 78% 16%, rgba(170, 225, 255, 0.24), transparent 0 16%),
-                linear-gradient(90deg, transparent 0 10%, rgba(255, 255, 255, 0.05) 10% 11%, transparent 11% 20%, rgba(255, 255, 255, 0.04) 20% 21%, transparent 21%);
-        }
-
-        .hero::after {
-            right: -10vw;
-            top: 8vh;
-            width: 42vw;
-            height: 42vw;
-            border-radius: 40% 60% 58% 42% / 41% 38% 62% 59%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03) 58%, transparent 60%);
-            filter: blur(2px);
-        }
-
-        .hero-grid {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
-            gap: clamp(24px, 4vw, 42px);
-            align-items: end;
-            padding-bottom: 28px;
-        }
-
-        .photo-wrap {
-            transform: translateY(18px);
-            animation: rise-in 0.7s ease-out both;
-        }
-
-        .photo-frame {
-            width: min(100%, 300px);
-            aspect-ratio: 4 / 5;
+        .photo-circle {
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1 / 1;
+            border-radius: 100%;
             overflow: hidden;
-            border-radius: 34px;
-            border: 6px solid rgba(255, 255, 255, 0.82);
-            box-shadow: var(--shadow);
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(145deg, #d9e6f5, #ffffff);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+            border: 4px solid white;
+            transition: var(--transition);
         }
 
-        .photo-frame img {
+        .photo-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
-        .identity {
-            display: grid;
-            gap: 18px;
-            padding-bottom: 12px;
-            animation: rise-in 0.8s ease-out both;
-            animation-delay: 0.08s;
-        }
-
-        .eyebrow {
+        .hero-badge {
+            margin-top: 18px;
             display: inline-flex;
-            width: fit-content;
             align-items: center;
-            gap: 10px;
-            padding: 10px 16px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.14);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            color: var(--accent-strong);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            backdrop-filter: blur(14px);
+            gap: 8px;
+            background: var(--accent-soft);
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-mid);
+            letter-spacing: -0.2px;
         }
 
-        h1 {
-            margin: 0;
-            max-width: 8.6ch;
-            font-size: clamp(2.4rem, 6vw, 5.6rem);
-            line-height: 0.94;
-            letter-spacing: -0.05em;
+        .hero-title {
+            margin-top: 8px;
         }
 
-        .lead {
-            margin: 0;
-            max-width: 68ch;
-            color: var(--muted);
-            font-size: 1.06rem;
-            line-height: 1.85;
+        .hero-title h1 {
+            font-size: 3.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0a2b44, #1f6390);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
         }
 
-        .hero-meta {
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 85%;
+            border-left: 4px solid var(--accent-light);
+            padding-left: 20px;
+            margin: 16px 0 20px;
+            font-weight: 500;
+        }
+
+        .quick-meta {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
+            margin: 18px 0 24px;
         }
 
-        .meta-pill {
+        .meta-badge {
+            background: #f0f6fe;
+            padding: 6px 16px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent-mid);
             display: inline-flex;
             align-items: center;
-            padding: 11px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--text-dark);
-            font-size: 0.94rem;
-            font-weight: 700;
-            box-shadow: 0 10px 26px rgba(9, 27, 44, 0.14);
+            gap: 10px;
         }
 
-        .hero-actions {
+        .btn-group {
             display: flex;
-            flex-wrap: wrap;
             gap: 14px;
+            flex-wrap: wrap;
         }
 
-        .action-btn {
-            border: 0;
+        .btn {
             display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 26px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            background: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary {
+            background: var(--accent-deep);
+            color: white;
+            box-shadow: 0 6px 14px rgba(10, 43, 68, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #0f3759;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px -8px rgba(10, 43, 68, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            border: 1px solid var(--border-light);
+            color: var(--accent-mid);
+        }
+
+        .btn-secondary:hover {
+            background: #f5faff;
+            border-color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* contact bar (premium) */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 36px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 24px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-glow);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-soft);
+            border-radius: 28px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 14px 20px;
-            border-radius: 999px;
-            cursor: pointer;
-            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+            color: var(--accent-mid);
+            font-size: 1.5rem;
         }
 
-        .action-btn:hover,
-        .action-btn:focus-visible {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(11, 27, 43, 0.2);
-        }
-
-        .action-primary {
-            background: linear-gradient(135deg, #f8fdff, #cdefff);
-            color: var(--text-dark);
-            font-weight: 800;
-        }
-
-        .action-secondary {
-            background: rgba(255, 255, 255, 0.12);
-            color: #f8fdff;
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            backdrop-filter: blur(12px);
-        }
-
-        .contact-strip {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 14px;
-            padding-bottom: 34px;
-            animation: rise-in 0.85s ease-out both;
-            animation-delay: 0.14s;
-        }
-
-        .contact-link,
-        .contact-static {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            min-height: 78px;
-            padding: 16px 18px;
-            border-radius: 24px;
-            background: var(--surface);
-            border: 1px solid var(--line);
-            backdrop-filter: blur(16px);
-        }
-
-        .contact-link:hover {
-            background: var(--surface-strong);
-        }
-
-        .icon-box {
-            width: 46px;
-            height: 46px;
-            flex: 0 0 46px;
-            display: grid;
-            place-items: center;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.84);
-            color: var(--text-dark);
-        }
-
-        .contact-text {
-            min-width: 0;
-        }
-
-        .contact-title {
-            display: block;
-            margin-bottom: 4px;
-            color: rgba(234, 244, 252, 0.74);
-            font-size: 0.74rem;
-            letter-spacing: 0.1em;
+        .contact-detail h4 {
+            font-size: 0.7rem;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 4px;
         }
 
-        .contact-value {
-            display: block;
-            font-size: 0.98rem;
-            line-height: 1.4;
-            word-break: break-word;
+        .contact-detail p, .contact-detail a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            text-decoration: none;
         }
 
-        .content {
-            padding-top: 20px;
-        }
-
-        .main-grid {
+        /* Two columns layout */
+        .two-columns {
             display: grid;
-            grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.9fr);
-            gap: 24px;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 28px;
+            margin-top: 8px;
         }
 
-        .column {
-            display: grid;
-            gap: 24px;
-        }
-
+        /* section styling */
         .section {
-            position: relative;
-            padding: 28px;
-            border-radius: 30px;
-            background: var(--surface-solid);
-            border: 1px solid rgba(255, 255, 255, 0.34);
-            box-shadow: 0 18px 46px rgba(12, 28, 45, 0.12);
-            color: var(--text-dark);
-            animation: rise-in 0.7s ease-out both;
-        }
-
-        .section::before {
-            content: "";
-            position: absolute;
-            left: 28px;
-            top: 0;
-            width: 84px;
-            height: 4px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #62b8ff, #dff3ff);
-        }
-
-        .section:nth-child(2) {
-            animation-delay: 0.05s;
-        }
-
-        .section:nth-child(3) {
-            animation-delay: 0.1s;
+            margin-bottom: 28px;
+            background: white;
+            border-radius: 28px;
+            padding: 28px 30px;
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
         }
 
         .section-header {
             display: flex;
             justify-content: space-between;
-            align-items: end;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
+            align-items: baseline;
+            margin-bottom: 22px;
+            border-bottom: 2px solid var(--accent-soft);
+            padding-bottom: 12px;
         }
 
-        h2 {
-            margin: 0;
-            font-size: 1rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #2f658f;
+        .section-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--accent-deep);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .section-kicker {
-            color: var(--muted-dark);
-            font-size: 0.95rem;
-        }
-
-        .summary {
-            margin: 0;
-            color: #2e4861;
-            font-size: 1rem;
-            line-height: 1.9;
-        }
-
-        .skills-grid,
-        .soft-grid {
-            display: grid;
-            gap: 14px;
-        }
-
-        .skill-chip,
-        .info-row,
-        .lang-row,
-        .course-item,
-        .soft-item,
-        .role-card {
-            border-radius: 22px;
-            border: 1px solid rgba(77, 131, 184, 0.14);
-            background: rgba(255, 255, 255, 0.82);
-        }
-
-        .skill-chip,
-        .info-row,
-        .lang-row,
-        .course-item {
-            padding: 18px;
-        }
-
-        .info-row span,
-        .lang-row span,
-        .course-item span {
-            color: var(--muted-dark);
-            line-height: 1.6;
+        .section-header i {
+            color: var(--accent-light);
+            font-size: 1.3rem;
         }
 
         .timeline {
-            display: grid;
-            gap: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
         }
 
-        .timeline-item {
-            position: relative;
-            padding-left: 24px;
+        .exp-card {
+            border-left: 3px solid var(--accent-light);
+            padding-left: 22px;
+            transition: var(--transition);
         }
 
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4c8fd0, #96ceff);
-            box-shadow: 0 0 0 8px rgba(76, 143, 208, 0.12);
+        .exp-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
         }
 
-        .timeline-item::after {
-            content: "";
-            position: absolute;
-            left: 5px;
-            top: 26px;
-            bottom: -16px;
-            width: 2px;
-            background: linear-gradient(180deg, rgba(76, 143, 208, 0.28), rgba(76, 143, 208, 0.03));
-        }
-
-        .timeline-item:last-child::after {
-            display: none;
-        }
-
-        .role-card {
-            padding: 22px;
-        }
-
-        .role-head {
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent-light);
+            margin: 4px 0 8px;
             display: flex;
             justify-content: space-between;
-            align-items: start;
-            gap: 14px;
             flex-wrap: wrap;
         }
 
-        h3 {
-            margin: 0;
-            font-size: 1.16rem;
-            line-height: 1.35;
+        .exp-date {
+            background: #ecf3fa;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
         }
 
-        .company {
-            margin-top: 6px;
-            color: #286293;
-            font-weight: 700;
+        .exp-list {
+            margin-top: 12px;
+            padding-left: 20px;
+            list-style: none;
         }
 
-        .period {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: rgba(77, 131, 184, 0.12);
-            color: #235f90;
-            font-size: 0.9rem;
-            font-weight: 700;
-            white-space: nowrap;
+        .exp-list li {
+            margin-bottom: 8px;
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
         }
 
-        .role-list {
-            margin: 14px 0 0;
-            padding-left: 18px;
-            color: #304b63;
-            line-height: 1.8;
+        .exp-list li i {
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            margin-top: 4px;
+            width: 16px;
         }
 
-        .skills-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .skill-chip {
-            color: #2e4a63;
-            line-height: 1.6;
-        }
-
-        .info-list,
-        .lang-list,
-        .course-grid {
+        /* skills grid */
+        .skills-wrapper {
             display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 12px;
         }
 
-        .info-row strong,
-        .lang-row strong,
-        .course-item strong {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 1rem;
-        }
-
-        .soft-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .soft-item {
+        .skill-tag {
+            background: #f6faff;
+            border-radius: 60px;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 18px;
-            color: #2e4a63;
+            gap: 10px;
+            border: 1px solid #e5eff8;
+            transition: var(--transition);
+        }
+
+        .skill-tag i {
+            color: var(--accent-mid);
+            width: 20px;
+        }
+
+        .info-row, .course-item, .lang-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .info-row strong, .course-item strong, .lang-item strong {
             font-weight: 700;
+            color: var(--accent-deep);
         }
 
-        .soft-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4c8fd0, #9fe0ff);
-            flex: 0 0 10px;
+        .soft-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
         }
 
-        .footer-note {
-            padding: 22px clamp(18px, 4vw, 56px) 10px;
-            color: rgba(237, 245, 252, 0.82);
-            text-align: center;
-            font-size: 0.92rem;
+        .soft-badge {
+            background: #f7fafd;
+            padding: 12px 14px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 0.85rem;
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+        .soft-badge i {
+            color: var(--accent-light);
         }
 
-        @keyframes rise-in {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
+        /* responsive */
+        @media (max-width: 1024px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 28px;
             }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .hero-tagline {
+                max-width: 100%;
+                text-align: left;
             }
-        }
-
-        @media (max-width: 1120px) {
-            .contact-strip {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .quick-meta {
+                justify-content: center;
             }
-
-            .main-grid {
+            .btn-group {
+                justify-content: center;
+            }
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .two-columns {
                 grid-template-columns: 1fr;
             }
-        }
-
-        @media (max-width: 840px) {
-            .hero {
-                min-height: auto;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                align-items: start;
-                padding-top: 36px;
-            }
-
-            .photo-wrap {
-                transform: none;
-            }
-
-            .contact-strip,
-            .skills-grid,
-            .soft-grid {
+            .skills-wrapper {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 640px) {
-            .shell {
-                padding-inline: 16px;
+            .resume-container {
+                padding: 20px 16px;
             }
-
-            .hero-grid {
-                padding-bottom: 28px;
+            .hero-section {
+                padding: 24px 20px;
             }
-
-            .photo-frame {
-                width: min(100%, 250px);
+            .hero-title h1 {
+                font-size: 2.2rem;
             }
-
-            h1 {
-                max-width: none;
-                font-size: clamp(2.2rem, 10vw, 3.8rem);
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
-
             .section {
-                padding: 22px 18px;
-                border-radius: 24px;
-            }
-
-            .section::before {
-                left: 18px;
+                padding: 20px;
             }
         }
 
+        /* print styles polished */
         @media print {
             body {
-                background: #ffffff;
-                color: #0f2234;
+                background: white;
+                padding: 0;
+                margin: 0;
             }
-
-            .hero,
-            .section,
-            .role-card,
-            .skill-chip,
-            .info-row,
-            .lang-row,
-            .course-item,
-            .soft-item,
-            .contact-link,
-            .contact-static {
-                box-shadow: none;
-                background: #ffffff;
-                border-color: rgba(0, 0, 0, 0.08);
-                backdrop-filter: none;
+            .resume-container {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
             }
-
-            .action-btn,
-            .footer-note {
+            .btn-group, .contact-grid .contact-card a, .btn, .hero-badge i {
                 display: none;
             }
+            .card, .section, .hero-section {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+            }
+            .contact-card {
+                border: none;
+                box-shadow: none;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        /* custom scroll and microinteractions */
+        ::selection {
+            background: var(--accent-glow);
+            color: var(--accent-deep);
         }
     </style>
 </head>
 <body>
-    <main class="page" id="resume-root">
-        <section class="hero">
-            <div class="shell">
-                <div class="hero-grid">
-                    <div class="photo-wrap">
-                        <div class="photo-frame">
-                            <img src="WhatsApp%20Image%202026-05-02%20at%2010.17.12.jpeg" alt="Portrait of Francisco Kauan da Silva de Araujo">
-                        </div>
+    <div class="resume-container">
+        <!-- Hero / header section - ultra refined -->
+        <div class="hero-section">
+            <div class="avatar-frame">
+                <div class="photo-circle">
+                    <img src="WhatsApp%20Image%202026-05-02%20at%2010.17.12.jpeg" alt="Francisco Kauan professional portrait">
+                </div>
+                <div class="hero-badge">
+                    <i class="fas fa-certificate"></i> <span>Accounting & Tax Specialist</span>
+                </div>
+            </div>
+            <div class="hero-title">
+                <h1>Francisco Kauan<br>da Silva de Araujo</h1>
+                <div class="hero-tagline">
+                    Accounting student with deep expertise in journal entries, reconciliations, tax support and closing cycles for Simples Nacional, Presumed Profit and Real Profit regimes.
+                </div>
+                <div class="quick-meta">
+                    <span class="meta-badge"><i class="fas fa-map-marker-alt"></i> Sorocaba, SP, Brazil</span>
+                    <span class="meta-badge"><i class="fas fa-phone-alt"></i> +55 (15) 99125-0713</span>
+                    <span class="meta-badge"><i class="fas fa-envelope"></i> fcokauan01@gmail.com</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="downloadPDFbtn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                    <button class="btn btn-secondary" id="downloadDOCbtn"><i class="fas fa-file-word"></i> Download Word</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact strip elevated -->
+        <div class="contact-grid">
+            <a href="mailto:fcokauan01@gmail.com" class="contact-card" style="text-decoration: none;">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-detail">
+                    <h4>Email</h4>
+                    <p>fcokauan01@gmail.com</p>
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/francisco-kauan-22b135349/" target="_blank" class="contact-card" style="text-decoration: none;">
+                <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div class="contact-detail">
+                    <h4>LinkedIn</h4>
+                    <p>francisco-kauan</p>
+                </div>
+            </a>
+            <a href="tel:+5515991250713" class="contact-card" style="text-decoration: none;">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="contact-detail">
+                    <h4>Phone / WhatsApp</h4>
+                    <p>+55 (15) 99125-0713</p>
+                </div>
+            </a>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-building"></i></div>
+                <div class="contact-detail">
+                    <h4>Location</h4>
+                    <p>Sorocaba - São Paulo, Brazil</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- main 2 column layout super optimized -->
+        <div class="two-columns">
+            <!-- Left column (main content) -->
+            <div>
+                <!-- Summary section -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user-check"></i> Professional Profile</h2>
+                        <i class="fas fa-asterisk" style="color:#cbdde9;"></i>
                     </div>
+                    <p style="font-size: 0.96rem; line-height: 1.65; color: var(--text-secondary);">
+                        Proactive accounting professional with solid experience in accounting routines, tax auxiliary obligations, and month-end closing. Deep understanding of Brazilian tax regimes (Simples Nacional, Lucro Presumido, Lucro Real). Skilled in Dominio ERP, Excel advanced tools, and tax document validation. Passionate about tax technology and process improvement to drive efficiency and compliance. Currently pursuing Bachelor's in Accounting to deepen tax & corporate strategy knowledge.
+                    </p>
+                </div>
 
-                    <div class="identity">
-                        <span class="eyebrow">Resume | Accounting and Tax</span>
-                        <h1>Francisco Kauan da Silva de Araujo</h1>
-                        <p class="lead">Accounting student with experience in accounting routines and tax support, working with journal entries, account reconciliations, and closing support for companies under different tax regimes.</p>
-
-                        <div class="hero-meta">
-                            <span class="meta-pill">Sorocaba, Sao Paulo, Brazil</span>
-                            <span class="meta-pill">+55 (15) 99125-0713</span>
-                            <span class="meta-pill">fcokauan01@gmail.com</span>
+                <!-- Experience timeline -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+                        <i class="fas fa-timeline"></i>
+                    </div>
+                    <div class="timeline">
+                        <div class="exp-card">
+                            <div class="exp-title">Accounting and Tax Assistant</div>
+                            <div class="exp-company">
+                                <span><i class="fas fa-building"></i> TRIVALLIS CONTABILIDADE E CONSULTORIA</span>
+                                <span class="exp-date"><i class="far fa-calendar-alt"></i> Mar/2026 – Present</span>
+                            </div>
+                            <ul class="exp-list">
+                                <li><i class="fas fa-check-circle"></i> Journal entries & account reconciliations for Simples Nacional and Presumed Profit regimes.</li>
+                                <li><i class="fas fa-check-circle"></i> Financial closing support including Real Profit companies.</li>
+                                <li><i class="fas fa-check-circle"></i> Issuance and validation of invoices, ensuring tax compliance.</li>
+                                <li><i class="fas fa-check-circle"></i> Integration between accounting, tax, and payroll data using Dominio system.</li>
+                                <li><i class="fas fa-check-circle"></i> Preparation of tax document organization and ancillary routines.</li>
+                            </ul>
                         </div>
-
-                        <div class="hero-actions">
-                            <button class="action-btn action-primary" type="button" id="download-pdf">
-                                <span aria-hidden="true">↓</span>
-                                Download PDF
-                            </button>
-                            <button class="action-btn action-secondary" type="button" id="download-word">
-                                <span aria-hidden="true">↓</span>
-                                Download Word
-                            </button>
+                        <div class="exp-card">
+                            <div class="exp-title">Accounting Assistant</div>
+                            <div class="exp-company">
+                                <span><i class="fas fa-building"></i> VANCREI INTELIGENCIA CONTABIL</span>
+                                <span class="exp-date"><i class="far fa-calendar-alt"></i> Feb/2025 – Jan/2026</span>
+                            </div>
+                            <ul class="exp-list">
+                                <li><i class="fas fa-check-circle"></i> Performed journal entries, reconciliations and accounting reports.</li>
+                                <li><i class="fas fa-check-circle"></i> Assisted tax calculations: IRPJ, CSLL, CPRB and ancillary obligations (DCTF, DIRBI, MIT, RET).</li>
+                                <li><i class="fas fa-check-circle"></i> Worked with Simples Nacional, Presumed Profit and Real Profit exposure.</li>
+                                <li><i class="fas fa-check-circle"></i> Organized documentation and supported tax compliance routines.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-strip">
-                    <a class="contact-link" href="mailto:fcokauan01@gmail.com" aria-label="Send an email to Francisco">
-                        <span class="icon-box" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25v13.5A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V5.25Zm2.17-.75 6.83 5.82 6.83-5.82H5.17Zm14.33 2-6.77 5.77a1.13 1.13 0 0 1-1.46 0L4.5 6.5v12.25c0 .41.34.75.75.75h13.5c.41 0 .75-.34.75-.75V6.5Z"/></svg>
-                        </span>
-                        <span class="contact-text">
-                            <span class="contact-title">Email</span>
-                            <span class="contact-value">fcokauan01@gmail.com</span>
-                        </span>
-                    </a>
-
-                    <a class="contact-link" href="https://www.linkedin.com/in/francisco-kauan-22b135349/" target="_blank" rel="noreferrer" aria-label="Open LinkedIn profile">
-                        <span class="icon-box" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.94 8.5H3.56V19h3.38V8.5Zm.22-3.25A1.97 1.97 0 0 0 5.19 3.3a1.98 1.98 0 1 0 1.97 1.95ZM20.44 12.43c0-3.15-1.68-4.62-3.92-4.62-1.8 0-2.61.99-3.06 1.69V8.5h-3.38c.04.66 0 10.5 0 10.5h3.38v-5.86c0-.31.02-.62.11-.84.25-.62.82-1.26 1.78-1.26 1.26 0 1.76.95 1.76 2.35V19H20.44v-6.57Z"/></svg>
-                        </span>
-                        <span class="contact-text">
-                            <span class="contact-title">LinkedIn</span>
-                            <span class="contact-value">francisco-kauan-22b135349</span>
-                        </span>
-                    </a>
-
-                    <a class="contact-link" href="tel:+5515991250713" aria-label="Call Francisco">
-                        <span class="icon-box" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.3.56 3.53.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.23.19 2.42.56 3.53a1 1 0 0 1-.25 1.01l-2.19 2.75Z"/></svg>
-                        </span>
-                        <span class="contact-text">
-                            <span class="contact-title">Phone</span>
-                            <span class="contact-value">+55 (15) 99125-0713</span>
-                        </span>
-                    </a>
-
-                    <div class="contact-static">
-                        <span class="icon-box" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.5 5.25A2.25 2.25 0 0 1 6.75 3h10.5a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 17.25 21H6.75A2.25 2.25 0 0 1 4.5 18.75V5.25Zm2.25-.75a.75.75 0 0 0-.75.75v13.5c0 .41.34.75.75.75h10.5a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75H6.75ZM9 7.5h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1 0-1.5Zm0 3.75h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1 0-1.5Zm0 3.75h3.75a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 9 15Z"/></svg>
-                        </span>
-                        <span class="contact-text">
-                            <span class="contact-title">Location</span>
-                            <span class="contact-value">Sorocaba - SP, Brazil</span>
-                        </span>
+                <!-- Technical skills grid modern -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-microchip"></i> Technical Competencies</h2>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="skills-wrapper">
+                        <div class="skill-tag"><i class="fas fa-calculator"></i> Accounting routines: entries, reconciliations & FS</div>
+                        <div class="skill-tag"><i class="fas fa-file-invoice-dollar"></i> Tax routines (IRPJ, CSLL, RET, CPRB)</div>
+                        <div class="skill-tag"><i class="fas fa-taxi"></i> Indirect taxes: ICMS, ISS, PIS, COFINS (basic)</div>
+                        <div class="skill-tag"><i class="fas fa-laptop-code"></i> ERP Dominio / SCI UNICO / Omie (basic)</div>
+                        <div class="skill-tag"><i class="fas fa-chart-simple"></i> Excel Advanced: VLOOKUP, Pivot, data modeling</div>
+                        <div class="skill-tag"><i class="fas fa-database"></i> IT & systems knowledge, process automation mindset</div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="content shell">
-            <div class="main-grid">
-                <div class="column">
-                    <article class="section">
-                        <div class="section-header">
-                            <h2>Professional Summary</h2>
-                            <span class="section-kicker">Quick overview</span>
-                        </div>
-                        <p class="summary">Accounting student with experience in accounting routines and tax support, working with journal entries, account reconciliations, and closing support for companies under different tax regimes. Experience with issuance and basic validation of tax documents, tax calculations (IRPJ, CSLL), and ancillary obligations. Analytical, organized profile with strong interest in developing a career in the tax area, including process improvement and the use of technology.</p>
-                    </article>
-
-                    <article class="section">
-                        <div class="section-header">
-                            <h2>Experience</h2>
-                            <span class="section-kicker">Professional experience</span>
-                        </div>
-                        <div class="timeline">
-                            <section class="timeline-item">
-                                <div class="role-card">
-                                    <div class="role-head">
-                                        <div>
-                                            <h3>Accounting and Tax Assistant</h3>
-                                            <div class="company">TRIVALLIS CONTABILIDADE E CONSULTORIA</div>
-                                        </div>
-                                        <div class="period">Mar/2026 - Present</div>
-                                    </div>
-                                    <ul class="role-list">
-                                        <li>Performed journal entries and account reconciliations.</li>
-                                        <li>Supported financial closing for companies under Simples Nacional and Presumed Profit regimes.</li>
-                                        <li>Assisted in closing processes for Real Profit companies.</li>
-                                        <li>Issued and performed basic validation of invoices, ensuring compliance with tax rules.</li>
-                                        <li>Supported document organization and tax routines.</li>
-                                        <li>Integrated accounting, tax, and payroll data.</li>
-                                        <li>System used: Dominio.</li>
-                                    </ul>
-                                </div>
-                            </section>
-
-                            <section class="timeline-item">
-                                <div class="role-card">
-                                    <div class="role-head">
-                                        <div>
-                                            <h3>Accounting Assistant</h3>
-                                            <div class="company">VANCREI INTELIGENCIA CONTABIL</div>
-                                        </div>
-                                            <div class="period">Feb/2025 - Jan/2026</div>
-                                    </div>
-                                    <ul class="role-list">
-                                        <li>Performed journal entries and account reconciliations.</li>
-                                        <li>Prepared accounting reports and financial statements.</li>
-                                            <li>Assisted in tax calculations (IRPJ, CSLL, CPRB).</li>
-                                            <li>Supported submission of ancillary obligations (DCTF, DIRBI, MIT, RET).</li>
-                                        <li>Worked with companies under Simples Nacional and Presumed Profit, with exposure to Real Profit.</li>
-                                            <li>Organized documents and supported compliance routines.</li>
-                                    </ul>
-                                </div>
-                            </section>
-                        </div>
-                    </article>
-
-                    <article class="section">
-                        <div class="section-header">
-                                <h2>Technical Skills</h2>
-                                <span class="section-kicker">Core skills</span>
-                        </div>
-                        <div class="skills-grid">
-                                <div class="skill-chip">Accounting routines: journal entries, reconciliations, and financial statements.</div>
-                                <div class="skill-chip">Tax routines (entry-level): invoice issuance and validation, tax calculations (IRPJ, CSLL, RET).</div>
-                                <div class="skill-chip">Basic knowledge of indirect taxes (ICMS, ISS, PIS, COFINS).</div>
-                                <div class="skill-chip">ERP Systems: Dominio (practical), SCI UNICO (practical), Omie (basic).</div>
-                                <div class="skill-chip">Excel: VLOOKUP, Pivot Tables, data import.</div>
-                                <div class="skill-chip">IT knowledge.</div>
-                        </div>
-                    </article>
+            <!-- Right column (education, courses, languages, soft skills) -->
+            <div>
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="info-row"><strong>🎓 Bachelor's in Accounting</strong> <span>UNINTER University – In progress</span><span>Graduation: 2031</span></div>
+                    <div class="info-row"><strong>📘 Technical Degree in Accounting</strong> <span>Gerardo Jose Dias de Loiola School</span><span>Completed 2024</span></div>
                 </div>
 
-                <aside class="column">
-                    <article class="section">
-                        <div class="section-header">
-                            <h2>Education</h2>
-                            <span class="section-kicker">Academic background</span>
-                        </div>
-                        <div class="info-list">
-                            <div class="info-row">
-                                <strong>Bachelor's Degree in Accounting - In Progress</strong>
-                                <span>UNINTER University</span>
-                                <span>Expected graduation: 2031</span>
-                            </div>
-                            <div class="info-row">
-                                <strong>Technical Degree in Accounting</strong>
-                                <span>Gerardo Jose Dias de Loiola Vocational School</span>
-                                <span>Completed: 2024</span>
-                            </div>
-                        </div>
-                    </article>
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-certificate"></i> Additional Courses</h2>
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="course-item"><strong>Business Accounting - Bradesco Foundation</strong> <span>2023</span></div>
+                    <div class="course-item"><strong>Basic Computing & IT Essentials</strong> <span>2022 – 2024</span></div>
+                    <div class="course-item"><strong>Excel for Financial Analysis</strong> <span>2024</span></div>
+                </div>
 
-                    <article class="section">
-                        <div class="section-header">
-                            <h2>Additional Courses</h2>
-                            <span class="section-kicker">Extra qualification</span>
-                        </div>
-                        <div class="course-grid">
-                            <div class="course-item">
-                                <strong>Bradesco Foundation - Business Accounting</strong>
-                                <span>2023</span>
-                            </div>
-                            <div class="course-item">
-                                <strong>Basic Computing</strong>
-                                <span>2022 - 2024</span>
-                            </div>
-                        </div>
-                    </article>
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-language"></i> Languages</h2>
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="lang-item"><strong>Portuguese</strong> <span>Native / Fluent</span></div>
+                    <div class="lang-item"><strong>English</strong> <span>Technical - Pre-intermediate (reading & writing)</span></div>
+                </div>
 
-                    <article class="section">
-                        <div class="section-header">
-                            <h2>Languages</h2>
-                            <span class="section-kicker">Language level</span>
-                        </div>
-                        <div class="lang-list">
-                            <div class="lang-row">
-                                <strong>Portuguese</strong>
-                                <span>Native</span>
-                            </div>
-                            <div class="lang-row">
-                                <strong>English</strong>
-                                <span>Technical: Pre-intermediate</span>
-                            </div>
-                        </div>
-                    </article>
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-heart"></i> Soft Skills</h2>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="soft-list">
+                        <div class="soft-badge"><i class="fas fa-search"></i> Attention to detail</div>
+                        <div class="soft-badge"><i class="fas fa-clock"></i> Deadline management</div>
+                        <div class="soft-badge"><i class="fas fa-comments"></i> Cross-team communication</div>
+                        <div class="soft-badge"><i class="fas fa-people-arrows"></i> Teamwork & collaboration</div>
+                        <div class="soft-badge"><i class="fas fa-rocket"></i> Fast learner / agility</div>
+                        <div class="soft-badge"><i class="fas fa-brain"></i> Analytical mindset</div>
+                    </div>
+                </div>
 
-                    <article class="section">
-                        <div class="section-header">
-                            <h2>Soft Skills</h2>
-                            <span class="section-kicker">Work profile</span>
-                        </div>
-                        <div class="soft-grid">
-                            <div class="soft-item"><span class="soft-dot"></span>Attention to detail</div>
-                            <div class="soft-item"><span class="soft-dot"></span>Organization and deadline management</div>
-                            <div class="soft-item"><span class="soft-dot"></span>Cross-team communication</div>
-                            <div class="soft-item"><span class="soft-dot"></span>Teamwork</div>
-                            <div class="soft-item"><span class="soft-dot"></span>Fast learner</div>
-                            <div class="soft-item"><span class="soft-dot"></span>Analytical mindset</div>
-                        </div>
-                    </article>
-                </aside>
+                <!-- extra highlight: references or statement -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-chart-line"></i> Career Focus</h2>
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Strong interest in tax area development, using technology to improve compliance, reduce risks, and optimize processes. Always looking for continuous learning in ERP systems and tax legislation.</p>
+                </div>
             </div>
-        </section>
-
-        <p class="footer-note"></p>
-    </main>
+        </div>
+    </div>
 
     <script>
-        (function () {
-            const pdfButton = document.getElementById("download-pdf");
-            const wordButton = document.getElementById("download-word");
-            const exportTitle = "Francisco_Kauan_Resume";
+        (function() {
+            const pdfBtn = document.getElementById('downloadPDFbtn');
+            const wordBtn = document.getElementById('downloadDOCbtn');
+            const resumeContainer = document.querySelector('.resume-container');
+            const originalTitle = "Francisco_Kauan_Accounting_Resume";
 
-            function buildWordDocument() {
-                const content = document.getElementById("resume-root").innerHTML;
-                return "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>" + exportTitle + "</title></head><body>" + content + "</body></html>";
+            // build clean Word HTML (preserves layout and styling)
+            function buildFullDocumentForExport() {
+                const cloneContainer = resumeContainer.cloneNode(true);
+                // Remove buttons inside the clone to avoid printing them twice (optional)
+                const btnsClone = cloneContainer.querySelectorAll('.btn-group');
+                btnsClone.forEach(btnGroup => btnGroup.remove());
+                // also remove any interactive script-ish elements, but style is kept.
+                const styleContent = document.querySelector('style').innerHTML;
+                return `<!DOCTYPE html>
+                <html>
+                <head><meta charset="UTF-8"><title>${originalTitle}</title>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <style>${styleContent} body { background: white; padding: 30px; } .btn-group, #downloadPDFbtn, #downloadDOCbtn, .btn { display: none; } .contact-card a, .btn { display: none; } .resume-container { max-width: 1200px; margin: 0 auto; }</style>
+                </head>
+                <body>${cloneContainer.outerHTML}</body>
+                </html>`;
             }
 
-            pdfButton.addEventListener("click", function () {
+            // PDF via browser print (optimized high-quality)
+            pdfBtn.addEventListener('click', () => {
                 window.print();
             });
 
-            wordButton.addEventListener("click", function () {
-                const html = buildWordDocument();
-                const blob = new Blob([html], { type: "application/msword" });
+            // Word download
+            wordBtn.addEventListener('click', () => {
+                const fullHtml = buildFullDocumentForExport();
+                const blob = new Blob([fullHtml], { type: 'application/msword' });
                 const url = URL.createObjectURL(blob);
-                const link = document.createElement("a");
-                link.href = url;
-                link.download = exportTitle + ".doc";
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${originalTitle}.doc`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
                 URL.revokeObjectURL(url);
             });
-        }());
+        })();
     </script>
 </body>
 </html>
