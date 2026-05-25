@@ -1,744 +1,834 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Francisco Kauan | Accounting & Tax Professional</title>
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Google Fonts: modern system-like with elegance -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Francisco Kauan | Profissional Contábil & Fiscal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        :root {
-            /* refined cool palette - deep navy, fresh blue, frosted surfaces */
-            --bg-primary: #f0f4fa;
-            --bg-surface: #ffffff;
-            --bg-elevated: #ffffff;
-            --accent-deep: #0a2b44;
-            --accent-mid: #1e4a76;
-            --accent-light: #2f6c9f;
-            --accent-soft: #ebf3fc;
-            --accent-glow: #cbe4fe;
-            --text-primary: #13293d;
-            --text-secondary: #2c4b6e;
-            --text-muted: #5c7a99;
-            --border-light: #e2edf7;
-            --shadow-sm: 0 6px 14px rgba(0, 10, 30, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
-            --shadow-md: 0 12px 28px -8px rgba(0, 32, 64, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
-            --shadow-lg: 0 22px 40px -12px rgba(0, 35, 65, 0.12);
-            --transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
-        }
+    :root {
+      --bg-primary: #f4f7fc;
+      --bg-surface: #ffffff;
+      --accent-deep: #0b2b4a;
+      --accent-mid: #1e4f7a;
+      --accent-light: #2f6ca3;
+      --accent-soft: #e8f1fa;
+      --accent-glow: #cde2fe;
+      --text-primary: #13293d;
+      --text-secondary: #2c4b6e;
+      --text-muted: #5c7a99;
+      --border-light: #e2edf8;
+      --shadow-sm: 0 8px 20px rgba(0, 10, 30, 0.04), 0 2px 6px rgba(0,0,0,0.02);
+      --shadow-md: 0 14px 32px -10px rgba(0, 32, 64, 0.08), 0 4px 14px rgba(0,0,0,0.02);
+      --shadow-lg: 0 24px 44px -14px rgba(0, 35, 65, 0.12);
+      --transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+      --radius-card: 32px;
+      --radius-btn: 60px;
+      --radius-modal: 28px;
+    }
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.45;
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      margin: 0;
+    }
 
-        /* enhanced smooth container */
-        .resume-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 32px 24px 56px;
-        }
+    .resume-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 36px 28px 64px;
+    }
 
-        /* glassmorphism / modern card layers */
-        .card {
-            background: var(--bg-surface);
-            border-radius: 32px;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(0px);
-        }
+    .card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.7);
+    }
 
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
 
-        /* header hero section — bold, minimal, structured */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 0.9fr 2.2fr;
-            gap: 32px;
-            margin-bottom: 32px;
-            background: linear-gradient(135deg, #ffffff 0%, #f9fcff 100%);
-            border-radius: 40px;
-            padding: 32px 36px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(30, 74, 118, 0.08);
-        }
+    .hero-section {
+      display: grid;
+      grid-template-columns: 0.9fr 2.2fr;
+      gap: 36px;
+      margin-bottom: 36px;
+      background: linear-gradient(135deg, #ffffff 0%, #f9fcff 100%);
+      border-radius: 40px;
+      padding: 36px 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(30, 74, 118, 0.08);
+    }
 
-        .avatar-frame {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    .avatar-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .photo-circle {
-            width: 100%;
-            max-width: 260px;
-            aspect-ratio: 1 / 1;
-            border-radius: 100%;
-            overflow: hidden;
-            background: linear-gradient(145deg, #d9e6f5, #ffffff);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
-            border: 4px solid white;
-            transition: var(--transition);
-        }
+    .photo-circle {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      overflow: hidden;
+      background: linear-gradient(145deg, #d9e6f5, #ffffff);
+      box-shadow: 0 22px 36px -12px rgba(0,0,0,0.2);
+      border: 4px solid white;
+    }
 
-        .photo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    .photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .hero-badge {
-            margin-top: 18px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent-soft);
-            padding: 8px 20px;
-            border-radius: 60px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent-mid);
-            letter-spacing: -0.2px;
-        }
+    .hero-badge {
+      margin-top: 20px;
+      background: var(--accent-soft);
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--accent-mid);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .hero-title {
-            margin-top: 8px;
-        }
+    .hero-title h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0a2b44, #1f6390);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+    }
 
-        .hero-title h1 {
-            font-size: 3.3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #0a2b44, #1f6390);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 12px;
-        }
+    .hero-tagline {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 85%;
+      border-left: 4px solid var(--accent-light);
+      padding-left: 22px;
+      margin: 18px 0 24px;
+      font-weight: 500;
+    }
 
-        .hero-tagline {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 85%;
-            border-left: 4px solid var(--accent-light);
-            padding-left: 20px;
-            margin: 16px 0 20px;
-            font-weight: 500;
-        }
+    .quick-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
 
-        .quick-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 18px 0 24px;
-        }
+    .meta-badge {
+      background: #f0f6fe;
+      padding: 8px 20px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--accent-mid);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .meta-badge {
-            background: #f0f6fe;
-            padding: 6px 16px;
-            border-radius: 60px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--accent-mid);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-        .btn-group {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      background: white;
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+    }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 26px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            background: white;
-            box-shadow: var(--shadow-sm);
-        }
+    .btn-primary {
+      background: var(--accent-deep);
+      color: white;
+      box-shadow: 0 8px 18px rgba(10, 43, 68, 0.2);
+    }
 
-        .btn-primary {
-            background: var(--accent-deep);
-            color: white;
-            box-shadow: 0 6px 14px rgba(10, 43, 68, 0.2);
-        }
+    .btn-primary:hover {
+      background: #10395a;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 26px -8px rgba(10, 43, 68, 0.35);
+    }
 
-        .btn-primary:hover {
-            background: #0f3759;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 22px -8px rgba(10, 43, 68, 0.3);
-        }
+    .btn-secondary {
+      background: white;
+      border: 1px solid var(--border-light);
+      color: var(--accent-mid);
+    }
 
-        .btn-secondary {
-            background: white;
-            border: 1px solid var(--border-light);
-            color: var(--accent-mid);
-        }
+    .btn-secondary:hover {
+      background: #f5faff;
+      border-color: var(--accent-light);
+    }
 
-        .btn-secondary:hover {
-            background: #f5faff;
-            border-color: var(--accent-light);
-            transform: translateY(-2px);
-        }
+    .btn-outline-gold {
+      background: transparent;
+      border: 1px solid #c9a94e;
+      color: #7a6320;
+      font-weight: 600;
+    }
 
-        /* contact bar (premium) */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-bottom: 36px;
-        }
+    .btn-outline-gold:hover {
+      background: #fef9e7;
+      border-color: #b4922c;
+    }
 
-        .contact-card {
-            background: white;
-            border-radius: 24px;
-            padding: 16px 18px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            transition: var(--transition);
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-        }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
 
-        .contact-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-glow);
-            box-shadow: var(--shadow-md);
-        }
+    .contact-card {
+      background: white;
+      border-radius: 24px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--accent-soft);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-mid);
-            font-size: 1.5rem;
-        }
+    .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-glow);
+    }
 
-        .contact-detail h4 {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-soft);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-mid);
+      font-size: 1.5rem;
+    }
 
-        .contact-detail p, .contact-detail a {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
+    .contact-detail h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
 
-        /* Two columns layout */
-        .two-columns {
-            display: grid;
-            grid-template-columns: 1fr 0.9fr;
-            gap: 28px;
-            margin-top: 8px;
-        }
+    .contact-detail p {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-        /* section styling */
-        .section {
-            margin-bottom: 28px;
-            background: white;
-            border-radius: 28px;
-            padding: 28px 30px;
-            transition: var(--transition);
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-        }
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 32px;
+      margin-top: 8px;
+    }
 
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 22px;
-            border-bottom: 2px solid var(--accent-soft);
-            padding-bottom: 12px;
-        }
+    .section {
+      margin-bottom: 30px;
+      background: white;
+      border-radius: 28px;
+      padding: 28px 32px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
 
-        .section-header h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            color: var(--accent-deep);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: 12px;
+    }
 
-        .section-header i {
-            color: var(--accent-light);
-            font-size: 1.3rem;
-        }
+    .section-header h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
+    .course-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-        .exp-card {
-            border-left: 3px solid var(--accent-light);
-            padding-left: 22px;
-            transition: var(--transition);
-        }
+    .course-item strong {
+      font-weight: 700;
+      color: var(--accent-deep);
+    }
 
-        .exp-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-        }
+    .course-action {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
 
-        .exp-company {
-            font-weight: 600;
-            color: var(--accent-light);
-            margin: 4px 0 8px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    .badge-cefis {
+      background: #f2f0e6;
+      color: #5e4a1a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.4px;
+    }
 
-        .exp-date {
-            background: #ecf3fa;
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
+    .info-row, .lang-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+    }
 
-        .exp-list {
-            margin-top: 12px;
-            padding-left: 20px;
-            list-style: none;
-        }
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
 
-        .exp-list li {
-            margin-bottom: 8px;
-            display: flex;
-            gap: 12px;
-            align-items: baseline;
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-        }
+    .skill-tag {
+      background: #f6faff;
+      border-radius: 60px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #e5eff8;
+    }
 
-        .exp-list li i {
-            color: var(--accent-light);
-            font-size: 0.75rem;
-            margin-top: 4px;
-            width: 16px;
-        }
+    .soft-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
 
-        /* skills grid */
-        .skills-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
+    .soft-badge {
+      background: #f7fafd;
+      padding: 12px 14px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
 
-        .skill-tag {
-            background: #f6faff;
-            border-radius: 60px;
-            padding: 10px 16px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid #e5eff8;
-            transition: var(--transition);
-        }
+    /* modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 20, 35, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.25s ease;
+    }
 
-        .skill-tag i {
-            color: var(--accent-mid);
-            width: 20px;
-        }
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
 
-        .info-row, .course-item, .lang-item {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    .modal-card {
+      background: white;
+      max-width: 760px;
+      width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius-modal);
+      padding: 0;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .info-row strong, .course-item strong, .lang-item strong {
-            font-weight: 700;
-            color: var(--accent-deep);
-        }
+    .modal-header {
+      padding: 20px 28px 12px 28px;
+      border-bottom: 1px solid var(--border-light);
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .soft-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 8px;
-        }
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .soft-badge {
-            background: #f7fafd;
-            padding: 12px 14px;
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-            font-size: 0.85rem;
-        }
+    .modal-close {
+      background: #f0f2f5;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
 
-        .soft-badge i {
-            color: var(--accent-light);
-        }
+    .modal-close:hover {
+      background: #e4e9ef;
+      color: #1e2f3f;
+    }
 
-        /* responsive */
-        @media (max-width: 1024px) {
-            .hero-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding: 28px;
-            }
-            .hero-tagline {
-                max-width: 100%;
-                text-align: left;
-            }
-            .quick-meta {
-                justify-content: center;
-            }
-            .btn-group {
-                justify-content: center;
-            }
-            .contact-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .two-columns {
-                grid-template-columns: 1fr;
-            }
-            .skills-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
+    .modal-body {
+      padding: 20px 28px;
+      overflow-y: auto;
+      flex: 1;
+    }
 
-        @media (max-width: 640px) {
-            .resume-container {
-                padding: 20px 16px;
-            }
-            .hero-section {
-                padding: 24px 20px;
-            }
-            .hero-title h1 {
-                font-size: 2.2rem;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .section {
-                padding: 20px;
-            }
-        }
+    .certificate-area {
+      background: #fefcf5;
+      border: 1px dashed #d4c5a0;
+      border-radius: 24px;
+      padding: 18px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
 
-        /* print styles polished */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-                margin: 0;
-            }
-            .resume-container {
-                max-width: 100%;
-                padding: 0;
-                margin: 0;
-            }
-            .btn-group, .contact-grid .contact-card a, .btn, .hero-badge i {
-                display: none;
-            }
-            .card, .section, .hero-section {
-                box-shadow: none;
-                border: 1px solid #ccc;
-                page-break-inside: avoid;
-            }
-            .contact-card {
-                border: none;
-                box-shadow: none;
-            }
-            a {
-                text-decoration: none;
-                color: black;
-            }
-        }
+    .certificate-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: #b48c2c;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
 
-        /* custom scroll and microinteractions */
-        ::selection {
-            background: var(--accent-glow);
-            color: var(--accent-deep);
-        }
-    </style>
+    .cert-preview {
+      width: 100%;
+      border: 1px solid #e9e0ce;
+      border-radius: 20px;
+      background: white;
+      overflow: hidden;
+      margin-top: 8px;
+      padding: 24px;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    .fallback-message {
+      background: #f9f7f0;
+      padding: 20px;
+      border-radius: 20px;
+      color: #7c6836;
+      font-size: 0.85rem;
+    }
+
+    .certificate-actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn-small {
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      border-radius: 40px;
+      background: #f0f4f9;
+      border: 1px solid #dce5ef;
+      cursor: pointer;
+    }
+
+    .modal-course-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .modal-course-list li {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    hr {
+      margin: 16px 0;
+      border-color: var(--border-light);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-section { grid-template-columns: 1fr; text-align: center; }
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-columns { grid-template-columns: 1fr; }
+      .skills-wrapper { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .resume-container { padding: 20px 16px; }
+      .modal-body { padding: 16px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .btn-group, .modal-overlay, .course-action button { display: none; }
+      .card, .section { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Hero / header section - ultra refined -->
-        <div class="hero-section">
-            <div class="avatar-frame">
-                <div class="photo-circle">
-                    <img src="WhatsApp%20Image%202026-05-02%20at%2010.17.12.jpeg" alt="Francisco Kauan professional portrait">
-                </div>
-                <div class="hero-badge">
-                    <i class="fas fa-certificate"></i> <span>Accounting & Tax Specialist</span>
-                </div>
-            </div>
-            <div class="hero-title">
-                <h1>Francisco Kauan<br>da Silva de Araujo</h1>
-                <div class="hero-tagline">
-                    Accounting student with solid experience in journal entries, reconciliations, and tax support. Expertise in closing cycles for Simples Nacional and Presumed Profit, with supervised exposure to Real Profit closings. Committed to compliance and process efficiency.
-                </div>
-                <div class="quick-meta">
-                    <span class="meta-badge"><i class="fas fa-map-marker-alt"></i> Sorocaba, SP, Brazil</span>
-                    <span class="meta-badge"><i class="fas fa-phone-alt"></i> +55 (15) 99125-0713</span>
-                    <span class="meta-badge"><i class="fas fa-envelope"></i> fcokauan01@gmail.com</span>
-                </div>
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="downloadPDFbtn"><i class="fas fa-file-pdf"></i> Download PDF</button>
-                    <button class="btn btn-secondary" id="downloadDOCbtn"><i class="fas fa-file-word"></i> Download Word</button>
-                </div>
-            </div>
+<div class="resume-container">
+  <!-- Hero -->
+  <div class="hero-section">
+    <div class="avatar-frame">
+      <div class="photo-circle">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle fill='%231e4f7a' cx='50' cy='50' r='50'/%3E%3Ctext x='50' y='67' font-size='45' text-anchor='middle' fill='white' font-weight='bold'%3EFK%3C/text%3E%3C/svg%3E" alt="Francisco Kauan">
+      </div>
+      <div class="hero-badge"><i class="fas fa-certificate"></i> Contabilidade e Tecnologia</div>
+    </div>
+    <div class="hero-title">
+      <h1>Francisco Kauan<br>da Silva de Araujo</h1>
+      <div class="hero-tagline">
+        Estudante de Ciências Contábeis com experiência em lançamentos, conciliações e fechamentos. Vivência em Simples Nacional e Lucro Presumido, com atuação em Lucro Real. Habilidades em tecnologia.
+      </div>
+      <div class="quick-meta">
+        <span class="meta-badge"><i class="fas fa-map-marker-alt"></i> Sorocaba, SP</span>
+        <span class="meta-badge"><i class="fas fa-phone-alt"></i> (15) 99125-0713</span>
+        <span class="meta-badge"><i class="fas fa-envelope"></i> fcokauan01@gmail.com</span>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" id="downloadPDFbtn"><i class="fas fa-file-pdf"></i> PDF</button>
+        <button class="btn btn-secondary" id="downloadDOCbtn"><i class="fas fa-file-word"></i> Word</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contatos -->
+  <div class="contact-grid">
+    <a href="mailto:fcokauan01@gmail.com" class="contact-card"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-detail"><h4>Email</h4><p>fcokauan01@gmail.com</p></div></a>
+    <a href="https://www.linkedin.com/in/francisco-kauan-22b135349/" target="_blank" class="contact-card"><div class="contact-icon"><i class="fab fa-linkedin-in"></i></div><div class="contact-detail"><h4>LinkedIn</h4><p>francisco-kauan</p></div></a>
+    <a href="tel:+5515991250713" class="contact-card"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-detail"><h4>Telefone</h4><p>(15) 99125-0713</p></div></a>
+    <div class="contact-card"><div class="contact-icon"><i class="fas fa-building"></i></div><div class="contact-detail"><h4>Localização</h4><p>Sorocaba - SP</p></div></div>
+  </div>
+
+  <div class="two-columns">
+    <!-- Coluna esquerda -->
+    <div>
+      <div class="section">
+        <div class="section-header"><h2><i class="fas fa-user-check"></i> Perfil Profissional</h2></div>
+        <p style="color: var(--text-secondary);">Profissional contábil e fiscal com foco em processos e tecnologia. Experiência autônoma em Simples Nacional, Lucro Presumido e Lucro Real. Conhecimento em Domínio, SCI UNICO, Excel intermediário e obrigações acessórias.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><h2><i class="fas fa-briefcase"></i> Experiência</h2></div>
+        <div style="border-left: 3px solid var(--accent-light); padding-left: 20px; margin-bottom: 24px;">
+          <div class="exp-title" style="font-weight: 800;">Assistente Contábil e Fiscal</div>
+          <div style="font-weight:600; color:var(--accent-light);">TRIVALLIS CONTABILIDADE <span style="background:#ecf3fa; padding:4px 12px; border-radius:20px; font-size:0.7rem; margin-left:12px;">Mar/2026 – Mai/2026</span></div>
+          <ul style="margin-top:12px; padding-left:20px; color:var(--text-secondary);">
+            <li>Lançamentos contábeis e conciliações para Simples e Presumido.</li>
+            <li>Fechamento Simples/Presumido; apoio em Lucro Real.</li>
+            <li>Suporte Fiscal e obrigações acessórias.</li>
+          </ul>
         </div>
-
-        <!-- Contact strip elevated -->
-        <div class="contact-grid">
-            <a href="mailto:fcokauan01@gmail.com" class="contact-card" style="text-decoration: none;">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div class="contact-detail">
-                    <h4>Email</h4>
-                    <p>fcokauan01@gmail.com</p>
-                </div>
-            </a>
-            <a href="https://www.linkedin.com/in/francisco-kauan-22b135349/" target="_blank" class="contact-card" style="text-decoration: none;">
-                <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                <div class="contact-detail">
-                    <h4>LinkedIn</h4>
-                    <p>francisco-kauan</p>
-                </div>
-            </a>
-            <a href="tel:+5515991250713" class="contact-card" style="text-decoration: none;">
-                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                <div class="contact-detail">
-                    <h4>Phone / WhatsApp</h4>
-                    <p>+55 (15) 99125-0713</p>
-                </div>
-            </a>
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-building"></i></div>
-                <div class="contact-detail">
-                    <h4>Location</h4>
-                    <p>Sorocaba - São Paulo, Brazil</p>
-                </div>
-            </div>
+        <div style="border-left: 3px solid var(--accent-light); padding-left: 20px;">
+          <div class="exp-title" style="font-weight: 800;">Auxiliar Contábil</div>
+          <div style="font-weight:600; color:var(--accent-light);">VANCREI INTELIGENCIA CONTABIL <span style="background:#ecf3fa; padding:4px 12px; border-radius:20px; font-size:0.7rem; margin-left:12px;">Fev/2025 – Jan/2026</span></div>
+          <ul style="margin-top:12px; padding-left:20px; color:var(--text-secondary);">
+            <li>Cálculos IRPJ, CSLL, CPRB e obrigações acessórias.</li>
+            <li>Fechamentos Simples/Presumido e Lucro Real.</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- main 2 column layout super optimized -->
-        <div class="two-columns">
-            <!-- Left column (main content) -->
-            <div>
-                <!-- Summary section -->
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-user-check"></i> Professional Profile</h2>
-                        <i class="fas fa-asterisk" style="color:#cbdde9;"></i>
-                    </div>
-                    <p style="font-size: 0.96rem; line-height: 1.65; color: var(--text-secondary);">
-                        Dedicated accounting professional with proven experience in accounting routines, tax auxiliary obligations, and month-end closing. Strong command of Brazilian tax regimes: Simples Nacional and Lucro Presumido (autonomous closing), plus collaborative experience in Lucro Real closings under supervision. Skilled in Dominio ERP, intermediate Excel tools, and tax document validation. Passionate about tax technology and process improvement. Currently pursuing a Bachelor's in Accounting and deepening knowledge in tax reform.
-                    </p>
-                </div>
-
-                <!-- Experience timeline with detailed regime info -->
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-                        <i class="fas fa-timeline"></i>
-                    </div>
-                    <div class="timeline">
-                        <div class="exp-card">
-                            <div class="exp-title">Accounting and Tax Assistant</div>
-                            <div class="exp-company">
-                                <span><i class="fas fa-building"></i> TRIVALLIS CONTABILIDADE E CONSULTORIA</span>
-                                <span class="exp-date"><i class="far fa-calendar-alt"></i> Mar/2026 – May/2026</span>
-                            </div>
-                            <ul class="exp-list">
-                                <li><i class="fas fa-check-circle"></i> Full journal entries & account reconciliations for Simples Nacional and Presumed Profit companies.</li>
-                                <li><i class="fas fa-check-circle"></i> Autonomous closing for Simples Nacional and Lucro Presumido regimes; support in Lucro Real closing under supervision.</li>
-                                <li><i class="fas fa-check-circle"></i> Issuance and validation of invoices, ensuring tax compliance and document integrity.</li>
-                                <li><i class="fas fa-check-circle"></i> Integration between accounting, tax, and payroll data using Dominio system.</li>
-                                <li><i class="fas fa-check-circle"></i> Preparation of tax calculations and ancillary obligations support.</li>
-                            </ul>
-                        </div>
-                        <div class="exp-card">
-                            <div class="exp-title">Accounting Assistant</div>
-                            <div class="exp-company">
-                                <span><i class="fas fa-building"></i> VANCREI INTELIGENCIA CONTABIL</span>
-                                <span class="exp-date"><i class="far fa-calendar-alt"></i> Feb/2025 – Jan/2026</span>
-                            </div>
-                            <ul class="exp-list">
-                                <li><i class="fas fa-check-circle"></i> Performed journal entries, reconciliations and accounting reports for diverse tax regimes.</li>
-                                <li><i class="fas fa-check-circle"></i> Assisted tax calculations: IRPJ, CSLL, CPRB and ancillary obligations (DCTF, DIRBI, MIT, RET).</li>
-                                <li><i class="fas fa-check-circle"></i> Active participation in closings for Simples Nacional and Presumed Profit; collaborated on Real Profit routines under supervision.</li>
-                                <li><i class="fas fa-check-circle"></i> Organized documentation and supported tax compliance across multiple clients.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technical skills grid modern - Excel intermediate -->
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-microchip"></i> Technical Competencies</h2>
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="skills-wrapper">
-                        <div class="skill-tag"><i class="fas fa-calculator"></i> Accounting routines: entries, reconciliations & FS</div>
-                        <div class="skill-tag"><i class="fas fa-file-invoice-dollar"></i> Tax routines (IRPJ, CSLL, RET, CPRB) & ancillary obligations</div>
-                        <div class="skill-tag"><i class="fas fa-taxi"></i> Indirect taxes: ICMS, ISS, PIS, COFINS (basic/operational)</div>
-                        <div class="skill-tag"><i class="fas fa-laptop-code"></i> ERP Dominio / SCI UNICO / Omie (basic)</div>
-                        <div class="skill-tag"><i class="fas fa-chart-simple"></i> Excel Intermediate: VLOOKUP, Pivot Tables, data organization</div>
-                        <div class="skill-tag"><i class="fas fa-database"></i> IT & systems mindset, process improvement focus</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right column (education, courses, languages, soft skills) -->
-            <div>
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <div class="info-row"><strong>🎓 Bachelor's in Accounting</strong> <span>UNINTER University – In progress</span><span>Graduation: 2031</span></div>
-                    <div class="info-row"><strong>📘 Technical Degree in Accounting</strong> <span>Gerardo Jose Dias de Loiola School</span><span>Completed 2024</span></div>
-                </div>
-
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-certificate"></i> Additional Courses</h2>
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="course-item"><strong>Business Accounting - Bradesco Foundation</strong> <span>2023</span></div>
-                    <div class="course-item"><strong>Basic Computing & IT Essentials</strong> <span>2022 – 2024</span></div>
-                    <div class="course-item"><strong>Reforma Tributária - em andamento</strong> <span>2026 – current</span></div>
-                </div>
-
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-language"></i> Languages</h2>
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="lang-item"><strong>Portuguese</strong> <span>Native / Fluent</span></div>
-                    <div class="lang-item"><strong>English</strong> <span>Technical - Pre-intermediate (reading & writing)</span></div>
-                </div>
-
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-heart"></i> Soft Skills</h2>
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="soft-list">
-                        <div class="soft-badge"><i class="fas fa-search"></i> Attention to detail</div>
-                        <div class="soft-badge"><i class="fas fa-clock"></i> Deadline management</div>
-                        <div class="soft-badge"><i class="fas fa-comments"></i> Cross-team communication</div>
-                        <div class="soft-badge"><i class="fas fa-people-arrows"></i> Teamwork & collaboration</div>
-                        <div class="soft-badge"><i class="fas fa-rocket"></i> Fast learner / agility</div>
-                        <div class="soft-badge"><i class="fas fa-brain"></i> Analytical mindset</div>
-                    </div>
-                </div>
-
-                <!-- extra highlight: career focus updated with tax reform emphasis -->
-                <div class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-chart-line"></i> Career Focus</h2>
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Strong interest in the tax area, with continuous learning in ERP systems, tax legislation, and the ongoing Brazilian tax reform. Aiming to contribute to strategic compliance, risk mitigation, and process digitalization in accounting firms or corporate tax departments.</p>
-                </div>
-            </div>
+      <div class="section">
+        <div class="section-header"><h2><i class="fas fa-microchip"></i> Competências Técnicas</h2></div>
+        <div class="skills-wrapper">
+          <div class="skill-tag"><i class="fas fa-calculator"></i> Rotinas contábeis e conciliações</div>
+          <div class="skill-tag"><i class="fas fa-file-invoice-dollar"></i> IRPJ, CSLL, RET, CPRB</div>
+          <div class="skill-tag"><i class="fas fa-laptop-code"></i> ERP Domínio / SCI UNICO</div>
+          <div class="skill-tag"><i class="fas fa-chart-simple"></i> Excel Intermediário (PROCV, Tabelas)</div>
+          <div class="skill-tag"><i class="fas fa-scale-balanced"></i> Simples, Presumido, Lucro Real</div>
+          <div class="skill-tag"><i class="fas fa-database"></i> Foco em processos e sistemas</div>
         </div>
+      </div>
     </div>
 
-    <script>
-        (function() {
-            const pdfBtn = document.getElementById('downloadPDFbtn');
-            const wordBtn = document.getElementById('downloadDOCbtn');
-            const resumeContainer = document.querySelector('.resume-container');
-            const originalTitle = "Francisco_Kauan_Accounting_Resume";
+    <!-- Coluna direita -->
+    <div>
+      <div class="section">
+        <div class="section-header"><h2><i class="fas fa-graduation-cap"></i> Formação</h2></div>
+        <div class="info-row"><strong>🎓 Ciências Contábeis</strong> <span>UNINTER – cursando</span></div>
+        <div class="info-row"><strong>📘 Técnico em Contabilidade</strong> <span>E.E.P Gerardo Jose dias de Loiola (2024)</span></div>
+      </div>
 
-            // build clean Word HTML (preserves layout and styling)
-            function buildFullDocumentForExport() {
-                const cloneContainer = resumeContainer.cloneNode(true);
-                // Remove buttons inside the clone to avoid printing them twice
-                const btnsClone = cloneContainer.querySelectorAll('.btn-group');
-                btnsClone.forEach(btnGroup => btnGroup.remove());
-                const styleContent = document.querySelector('style').innerHTML;
-                return `<!DOCTYPE html>
-                <html>
-                <head><meta charset="UTF-8"><title>${originalTitle}</title>
-                <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                <style>${styleContent} body { background: white; padding: 30px; } .btn-group, #downloadPDFbtn, #downloadDOCbtn, .btn { display: none; } .contact-card a, .btn { display: none; } .resume-container { max-width: 1200px; margin: 0 auto; }</style>
-                </head>
-                <body>${cloneContainer.outerHTML}</body>
-                </html>`;
-            }
+      <div class="section">
+        <div class="section-header"><h2><i class="fas fa-certificate"></i> Cursos & Certificações</h2></div>
+        <div class="course-item">
+          <div><strong>Fechamento de Balanço</strong> <span class="badge-cefis">CEFIS</span><br><span style="font-size:0.8rem; color:var(--text-muted);">Mai 2026</span></div>
+          <button class="btn btn-outline-gold course-detail-btn" data-course="balance" style="padding:6px 18px; font-size:0.8rem;">Sobre o curso + Certificado</button>
+        </div>
+        <div class="course-item">
+          <div><strong>IFRS</strong> <span class="badge-cefis">CEFIS</span><br><span style="font-size:0.8rem; color:var(--text-muted);">Em andamento</span></div>
+          <span style="color:var(--accent-light);"><i class="fas fa-spinner"></i> cursando</span>
+        </div>
+        <div class="course-item">
+          <div><strong>Lógica de Programação</strong> <span class="badge-cefis" style="background:#e3eef9;">SENAI</span><br><span style="font-size:0.8rem; color:var(--text-muted);">2025</span></div>
+          <span style="color:var(--accent-light);"><i class="fas fa-check-circle"></i> Concluído</span>
+        </div>
+        <div class="course-item"><strong>Contabilidade Empresarial</strong> <span>Fundação Bradesco (2023)</span></div>
+        <div class="course-item"><strong>Reforma Tributária</strong> <span>em andamento (2026)</span></div>
+      </div>
 
-            // PDF via browser print (high-quality export)
-            pdfBtn.addEventListener('click', () => {
-                window.print();
-            });
+      <div class="section">
+        <div class="section-header"><h2><i class="fas fa-language"></i> Idiomas</h2></div>
+        <div class="lang-item"><strong>Português</strong> <span>Nativo</span></div>
+        <div class="lang-item"><strong>Inglês</strong> <span>Técnico / Pré-intermediário - em desenvolvimento</span></div>
+      </div>
 
-            // Word download
-            wordBtn.addEventListener('click', () => {
-                const fullHtml = buildFullDocumentForExport();
-                const blob = new Blob([fullHtml], { type: 'application/msword' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `${originalTitle}.doc`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            });
-        })();
-    </script>
+      <div class="section">
+        <div class="section-header"><h2><i class="fas fa-heart"></i> Soft Skills</h2></div>
+        <div class="soft-list">
+          <div class="soft-badge"><i class="fas fa-search"></i> Atenção a detalhes</div>
+          <div class="soft-badge"><i class="fas fa-clock"></i> Gestão de prazos</div>
+          <div class="soft-badge"><i class="fas fa-comments"></i> Comunicação</div>
+          <div class="soft-badge"><i class="fas fa-people-arrows"></i> Colaboração</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Curso -->
+<div class="modal-overlay" id="courseModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-title"><i class="fas fa-certificate"></i> Detalhes do Curso</div>
+      <button class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div id="modalDynamicContent"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const modal = document.getElementById('courseModal');
+    const modalContent = document.getElementById('modalDynamicContent');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function closeModal() { modal.classList.remove('active'); }
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+    // Dados dos cursos
+    const coursesData = {
+      balance: {
+        title: 'Fechamento de Balanço',
+        institution: 'CEFIS · Concluído em Maio/2026',
+        description: 'Curso completo sobre procedimentos de fechamento contábil anual nos regimes Simples Nacional, Lucro Presumido e Lucro Real.',
+        topics: [
+          'Objetivos e fundamentos do fechamento',
+          'Balancetes de verificação e prazo de escrituração',
+          'Conciliação contábil: Estoques, Fornecedores, Provisões',
+          'Receitas, despesas e investimentos relevantes',
+          'Plano de contas e demonstrações contábeis',
+          'Provisão para crédito de liquidação duvidosa (PCLD)',
+          'CPC 12 e princípios contábeis gerais'
+        ]
+      }
+    };
+
+    // BUG CORRIGIDO 1: removido iframe com srcdoc (quebrava por aspas não escapadas e FA ausente).
+    // O certificado agora é renderizado diretamente como HTML no modal, evitando o problema.
+    function buildCertPreview() {
+      return `
+        <div class="cert-preview">
+          <div style="font-size:3rem; color:#c9a94e; margin-bottom:12px;">&#9733;</div>
+          <h3 style="font-size:1.4rem; color:#1e4f7a; margin-bottom:6px;">Certificado de Conclusão</h3>
+          <p style="color:#5e4a1a; margin-bottom:12px;">Certificamos que <strong>Francisco Kauan da Silva de Araujo</strong> concluiu com êxito o curso</p>
+          <h2 style="font-size:1.2rem; color:#0b2b4a; margin-bottom:12px;">"Fechamento de Balanço e Demonstrações Contábeis"</h2>
+          <p style="color:#555; margin-bottom:16px;">Carga horária: 24 horas &nbsp;|&nbsp; Conclusão: Maio/2026</p>
+          <div style="color:#2f6ca3; margin-bottom:12px;">✔ Válido como capacitação profissional</div>
+          <hr style="width:80px; margin:12px auto; border-color:#d4c5a0;">
+          <p style="font-size:0.8rem; color:#888;">CEFIS - Centro de Formação e Inovação</p>
+        </div>`;
+    }
+
+    function showCourseDetails(courseId) {
+      const course = coursesData[courseId];
+      if (!course) return;
+
+      const topicsHtml = course.topics
+        .map(function (t) { return '<li><span style="color:var(--accent-light);">&#10003;</span> ' + t + '</li>'; })
+        .join('');
+
+      // BUG CORRIGIDO 2: download do certificado agora usa o conteúdo HTML diretamente (sem iframe)
+      const fullHtml = `
+        <div style="margin-bottom:6px;">
+          <h3 style="font-size:1.8rem; color:var(--accent-deep);">${course.title}</h3>
+          <p style="color:var(--accent-mid); font-weight:500;">&#128197; ${course.institution}</p>
+          <p style="margin:12px 0 16px; color:var(--text-secondary);">${course.description}</p>
+        </div>
+        <hr>
+        <h4 style="margin:12px 0 8px;">&#9776; Conteúdo programático</h4>
+        <ul class="modal-course-list">${topicsHtml}</ul>
+        <hr>
+        <h4 style="margin:18px 0 12px;">&#127941; Comprovante oficial</h4>
+        <div class="certificate-area">
+          <div class="certificate-label">&#128196; Visualização do Certificado</div>
+          ${buildCertPreview()}
+          <div class="certificate-actions">
+            <button id="downloadCertBtn" class="btn-small">&#8681; Salvar certificado</button>
+          </div>
+          <p style="font-size:0.7rem; margin-top:10px; color:#a68b4c;">&#8505; Documento digital oficial, disponível para verificação.</p>
+        </div>`;
+
+      modalContent.innerHTML = fullHtml;
+      modal.classList.add('active');
+
+      // BUG CORRIGIDO 3: download do certificado sem depender de iframe
+      var downloadBtn = document.getElementById('downloadCertBtn');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', function () {
+          var certHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Certificado - Francisco Kauan</title>'
+            + '<style>body{font-family:Georgia,serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#fefcf5;}'
+            + '.cert{max-width:600px;width:90%;border:2px solid #c9a94e;border-radius:16px;padding:40px;text-align:center;background:white;}'
+            + 'h1{color:#0b2b4a;} h2{color:#1e4f7a;} .star{font-size:3rem;color:#c9a94e;}</style></head>'
+            + '<body><div class="cert"><div class="star">&#9733;</div>'
+            + '<h1>Certificado de Conclusão</h1>'
+            + '<p>Certificamos que <strong>Francisco Kauan da Silva de Araujo</strong> concluiu com êxito o curso</p>'
+            + '<h2>Fechamento de Balanço e Demonstrações Contábeis</h2>'
+            + '<p>Carga horária: 24 horas | Conclusão: Maio/2026</p>'
+            + '<hr style="width:80px;border-color:#d4c5a0;margin:16px auto;">'
+            + '<p style="font-size:0.85rem;color:#888;">CEFIS - Centro de Formação e Inovação</p>'
+            + '</div></body></html>';
+
+          var blob = new Blob([certHtml], { type: 'text/html' });
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'Certificado_Fechamento_Balanco.html';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(a.href);
+        });
+      }
+    }
+
+    // Bind nos botões de detalhes do curso
+    document.querySelectorAll('.course-detail-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        showCourseDetails(btn.getAttribute('data-course'));
+      });
+    });
+
+    // PDF via impressão
+    document.getElementById('downloadPDFbtn').addEventListener('click', function () {
+      window.print();
+    });
+
+    // BUG CORRIGIDO 4: download Word — clone apenas do resume-container (modal está fora dele, então
+    // o querySelector dentro do clone nunca encontrava .modal-overlay). Agora removemos apenas os
+    // elementos que realmente existem dentro do container.
+    document.getElementById('downloadDOCbtn').addEventListener('click', function () {
+      var originalContainer = document.querySelector('.resume-container');
+      var cloneContainer = originalContainer.cloneNode(true);
+
+      // Remove apenas botões e elementos interativos que estão dentro do container clonado
+      cloneContainer.querySelectorAll('.btn-group, .course-detail-btn, .certificate-actions').forEach(function (el) {
+        if (el) el.remove();
+      });
+
+      var styles = document.querySelector('style').innerHTML;
+      var fullHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Francisco_Kauan_Contabil</title>'
+        + '<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">'
+        + '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">'
+        + '<style>' + styles + ' body{background:white;padding:30px;} .btn,.course-detail-btn{display:none;}</style>'
+        + '</head><body>' + cloneContainer.outerHTML + '</body></html>';
+
+      var blob = new Blob([fullHtml], { type: 'application/msword' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'Francisco_Kauan_Curriculo.doc';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    });
+  })();
+</script>
 </body>
 </html>
